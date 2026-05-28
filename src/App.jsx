@@ -374,4 +374,4 @@ export default function IPTVEditor() {
                           <td style={tdStyle}><input type="checkbox" checked={selectedChannels.has(ch.id)} onChange={e => { const s = new Set(selectedChannels); e.target.checked ? s.add(ch.id) : s.delete(ch.id); setSelectedChannels(s); }} /></td>
                           <td style={{ ...tdStyle, color: "rgba(255,255,255,0.3)", width: 40 }}>{idx + 1}</td>
                           <td style={{ ...tdStyle, fontWeight: 600, color: "#e0e8f0", maxWidth: 200 }}>
-                            <div style={{ display: "
+                            <div style={{ display: "flex"
