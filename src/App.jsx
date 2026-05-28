@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo const [urlInput, setUrlInput] = useState("");
+} from "react";
 
 // ─── LICENSE SYSTEM ───────────────────────────────────────────────────────────
 const VALID_KEYS = ["IPTV-PRO-LIFETIME-2024", "IPTV-EDITOR-FOREVER", "PROX-LIFE-9999", "DEMO-ACTIVATE-NOW"];
