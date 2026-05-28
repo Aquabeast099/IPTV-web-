@@ -371,7 +371,24 @@ export default function IPTVEditor() {
                           onDrop={handleDrop}
                           style={{ borderBottom: "1px solid rgba(255,255,255,0.04)", background: dropIdx === idx ? "rgba(0,200,255,0.05)" : selectedChannels.has(ch.id) ? "rgba(0,200,255,0.07)" : "transparent", cursor: "grab" }}
                         >
-                          <td style={tdStyle}><input type="checkbox" checked={selectedChannels.has(ch.id)} onChange={e => { const s = new Set(selectedChannels); e.target.checked ? s.add(ch.id) : s.delete(ch.id); setSelectedChannels(s); }} /></td>
-                          <td style={{ ...tdStyle, color: "rgba(255,255,255,0.3)", width: 40 }}>{idx + 1}</td>
-                          <td style={{ ...tdStyle, fontWeight: 600, color: "#e0e8f0", maxWidth: 200 }}>
-                            <div style={{ display: "flex"
+                                                  <td style={{ ...tdStyle, fontWeight: 600, color: "#e0e8f0", maxWidth: 200 }}>
+                            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                              {ch.logo && <img src={ch.logo} alt="" style={{ width: 20, height: 20, objectFit: "contain" }} />}
+                              <span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{ch.name}</span>
+                            </div>
+                          </td>
+                          <td style={{ ...tdStyle, fontSize: 11, color: "rgba(0,200,255,0.6)" }}>{ch.group}</td>
+                          <td style={{ ...tdStyle, fontSize: 10, opacity: 0.5 }}>{ch.tvgId}</td>
+                          <td style={{ ...tdStyle, fontSize: 10, opacity: 0.3, maxWidth: 200, overflow: "hidden", textOverflow: "ellipsis" }}>{ch.url}</td>
+                          <td style={tdStyle}>
+                            <button onClick={() => setEditingChannel(ch)} style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", cursor: "pointer", padding: "2px 8px", fontSize: 10 }}>Editar</button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+              </div>
+            </>
+          )}
+          
